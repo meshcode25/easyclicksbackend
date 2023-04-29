@@ -1,19 +1,19 @@
-require("@babel/register")({
-  presets: ["@babel/preset-env", "@babel/preset-react"],
-  "plugins": [
-    [
-      "transform-assets",
-      {
-        "extensions": [
-          "css",
-          "svg",
-          "png",
-        ],
-        "name": "static/media/[name].[hash:8].[ext]"
-      }
-    ]
-  ]
-});
+// require("@babel/register")({
+//   presets: ["@babel/preset-env", "@babel/preset-react"],
+//   "plugins": [
+//     [
+//       "transform-assets",
+//       {
+//         "extensions": [
+//           "css",
+//           "svg",
+//           "png",
+//         ],
+//         "name": "static/media/[name].[hash:8].[ext]"
+//       }
+//     ]
+//   ]
+// });
 
 require("dotenv").config()
 const mongoose= require("mongoose")
@@ -35,8 +35,8 @@ import App from "./pmsclient/src/app".default
 */ 
 
 
-const React = require("react");
-const ReactDOMServer = require("react-dom/server");
+//const React = require("react");
+//const ReactDOMServer = require("react-dom/server");
 //const App = require("../pmsclient/src/App").default
 
 const fs = require("fs");
@@ -94,7 +94,7 @@ const mongodb_uri= `mongodb+srv://${username}:${password}@pmscluster.0rags3f.mon
 
 console.log(mongodb_uri);
 
-mongoose.connect(`${mongodb_uri}`);
+//mongoose.connect(`${mongodb_uri}`);
 
 //mongoose.connect("mongodb+srv://yegon:Yegon@20**@pmscluster.0rags3f.mongodb.net/test", {useNewUrlParser:true})
 
