@@ -154,7 +154,7 @@ app.use("/o/auth/passwordreset",  passwordresetRouter)
 app.use("/o/auth/login",   loginRouter)
 app.use("/o/auth/verify", verifyemailRouter)
 app.use("/o/auth/signup",  signupRouter)
-//app.use("/", indexRouter)
+app.use("/", indexRouter)
 
 
 app.use("/properties", propertyMangerRouter)
