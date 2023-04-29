@@ -49,7 +49,7 @@ const app= express()
 
 require("jsonwebtoken")
 
-const auth=require("../middlewares/authentification")
+const auth=require("./middlewares/authentification")
 
 const cookieParser = require("cookie-parser")
 
@@ -57,12 +57,12 @@ const cookieParser = require("cookie-parser")
 
 
 //set the roots to be used for the app
-const loginRouter= require ("../routes/loginRouter")
-const indexRouter= require("../routes/indexRouter")
-const signupRouter= require("../routes/signupRouter")
-const verifyemailRouter=require("../routes/verifyemailRouter")
-const passwordresetRouter= require("../routes/passwordresetRouter")
-const propertyMangerRouter= require("../routes/propertymanagerRouter")
+const loginRouter= require ("./routes/loginRouter")
+const indexRouter= require("./routes/indexRouter")
+const signupRouter= require("./routes/signupRouter")
+const verifyemailRouter=require("./routes/verifyemailRouter")
+const passwordresetRouter= require("./routes/passwordresetRouter")
+const propertyMangerRouter= require("./routes/propertymanagerRouter")
 //const landLordRouter= require("./routes/landlordRouter")
 //const tenantRouter= require("./routes/tenantRouter")
 //const maintenanceRouter= require("./routes/maintenanceRouter")
