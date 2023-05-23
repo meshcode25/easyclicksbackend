@@ -151,8 +151,7 @@ const index=()=>{
 // app.use(auth);
 //use url paths as middlewares
 app.use("/o/auth/passwordreset",  passwordresetRouter)
-///app.use("/o/auth/login",   loginRouter)
-app.use("/o/auth/login", res.send("here is your login shit"))
+app.use("/o/auth/login",   loginRouter)
 app.use("/o/auth/verify", verifyemailRouter)
 app.use("/o/auth/signup",  signupRouter)
 app.use("/", indexRouter)
