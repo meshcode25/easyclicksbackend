@@ -122,13 +122,13 @@ async function run() {
 // }
 
 
-corsOptions={
-  origin:"https://easyclickspmsclient.vercel.app",
-  methods:"GET, PUT, POST, DELETE",
-  origin:"*",
-  credentials:"false",
-  optionSuccessStatus:200
-}
+// corsOptions={
+//   origin:"https://easyclickspmsclient.vercel.app",
+//   methods:"GET, PUT, POST, DELETE",
+//   origin:"*",
+//   credentials:"false",
+//   optionSuccessStatus:200
+// }
 //Middlewares
 //body parser and urlencode
 app.use(express.json())
@@ -153,8 +153,8 @@ app.set("view engine", "ejs")
 
   
 
-Cors 
-app.use(cors(corsOptions)) 
+//Cors 
+//app.use(cors(corsOptions)) 
 
 // Add headers before the routes are defined
 app.all(function (req, res, next) {
