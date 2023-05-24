@@ -43,7 +43,7 @@ exports.login_form_post=function(req,res,next){
             }
             else{
                 if(!verified){
-                    return res.status(200).send({message: "Unverified Email, Please Check you Email to Verify your Account", color: "red", type:"unverified"})
+                    return res.status(200).send({message: "Unverified Email, Please Check you Email to Verify your Account", color: "red", type:"unverified",  Headers:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"})
                 
                 }else{    
                     const token=jwt.sign({exp:Math.floor(Date.now()/1000)+ (60*2), user:user}, process.env.SECRET)   
@@ -57,14 +57,15 @@ exports.login_form_post=function(req,res,next){
                         message:"Login Success, wait as we redirect you to the next page",
                         refreshtoken:refreshtoken,
                         // accesstoken: token, 
-                        color:"green"
+                        color:"green",
+                        Headers:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"
                     })
                 }   
             }
         }  
         else{
-           return  res.setHeader('Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/')
-            //return res.status(200).send({message:"Invalidd Email or Password", color: "red", type:"invaliduser"})  
+//           return  res.setHeader('Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/')
+            return res.status(200).send({message:"Invalidd Email or Password", color: "red", type:"invaliduser", Headers:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"})  
     }
     }).catch(err => console.error(`An error occured while looking at the database for login ${err}`))
 }
