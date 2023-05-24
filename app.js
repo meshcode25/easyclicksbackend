@@ -115,6 +115,7 @@ async function run() {
 //Cors/// Cross-Origin-Resource-Sharing
 corsOptions={
   origin:"Access-Control-Allow-Origin", 
+  methods:"GET, PUT, POST, DELETE",
   origin:"*",
   credentials:"false",
   optionSuccessStatus:200
