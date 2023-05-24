@@ -63,7 +63,8 @@ exports.login_form_post=function(req,res,next){
             }
         }  
         else{
-            return res.status(200).send({message:"Invalidd Email or Password", color: "red", type:"invaliduser"})  
+           return  res.setHeader('Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/')
+            //return res.status(200).send({message:"Invalidd Email or Password", color: "red", type:"invaliduser"})  
     }
     }).catch(err => console.error(`An error occured while looking at the database for login ${err}`))
 }
