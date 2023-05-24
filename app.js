@@ -113,14 +113,22 @@ async function run() {
 */
 
 //Cors/// Cross-Origin-Resource-Sharing
+// corsOptions={
+//   origin:"Access-Control-Allow-Origin", 
+//   methods:"GET, PUT, POST, DELETE",
+//   origin:"*",
+//   credentials:"false",
+//   optionSuccessStatus:200
+// }
+
+
 corsOptions={
-  origin:"Access-Control-Allow-Origin", 
+  origin:"https://easyclickspmsclient.vercel.app",
   methods:"GET, PUT, POST, DELETE",
   origin:"*",
   credentials:"false",
   optionSuccessStatus:200
 }
-
 //Middlewares
 //body parser and urlencode
 app.use(express.json())
