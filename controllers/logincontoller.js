@@ -15,6 +15,24 @@ const secret=authconfig.secret
 // }
 
 exports.login_form_post=function(req,res,next){
+    
+
+          // Website you wish to allow to connect
+          res.setHeader('Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app');
+        
+          // Request methods you wish to allow
+          res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+        
+          // Request headers you wish to allow
+          res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+        
+          // Set to true if you need the website to include cookies in the requests sent
+          // to the API (e.g. in case you use sessions)
+          //res.setHeader('Access-Control-Allow-Credentials', true);
+          
+          // Pass to next layer of middleware
+          next();
+    
 
     User.findOne({
         email:req.body.email
@@ -39,11 +57,11 @@ exports.login_form_post=function(req,res,next){
             console.log(verified);
             console.log(user);
             if(!validPassword){
-                return res.status(200).send({message: "Invalid Password or Email", accesstoken:null, color: "red", type:"invaliduser"})
+                return res.status(200).send({message: "Invalid Password or Email", accesstoken:null, color: "red", type:"invaliduser",  header:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"})
             }
             else{
                 if(!verified){
-                    return res.status(200).send({message: "Unverified Email, Please Check you Email to Verify your Account", color: "red", type:"unverified",  Headers:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"})
+                    return res.status(200).send({message: "Unverified Email, Please Check you Email to Verify your Account", color: "red", type:"unverified",  header:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"})
                 
                 }else{    
                     const token=jwt.sign({exp:Math.floor(Date.now()/1000)+ (60*2), user:user}, process.env.SECRET)   
@@ -58,7 +76,7 @@ exports.login_form_post=function(req,res,next){
                         refreshtoken:refreshtoken,
                         // accesstoken: token, 
                         color:"green",
-                        Headers:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"
+                        header:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"
                     })
                 }   
             }
