@@ -18,7 +18,7 @@ exports.login_form_post=function(req,res,next){
     
 
           // Website you wish to allow to connect
-          res.setHeader('Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app');
+          res.setHeader('Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/');
         
           // Request methods you wish to allow
           res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
