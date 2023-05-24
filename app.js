@@ -122,13 +122,13 @@ async function run() {
 // }
 
 
-corsOptions={
-  origin:"https://easyclickspmsclient.vercel.app",
-  methods:"GET, PUT, POST, DELETE",
-  origin:"*",
-  credentials:"false",
-  optionSuccessStatus:200
-}
+// corsOptions={
+//   origin:"https://easyclickspmsclient.vercel.app",
+//   methods:"GET, PUT, POST, DELETE",
+//   origin:"*",
+//   credentials:"false",
+//   optionSuccessStatus:200
+// }
 //Middlewares
 //body parser and urlencode
 app.use(express.json())
@@ -153,7 +153,7 @@ app.set("view engine", "ejs")
 
   
 // Add headers before the routes are defined
-app.use(function (req, res, next) {
+app.all(function (req, res, next) {
 
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app');
