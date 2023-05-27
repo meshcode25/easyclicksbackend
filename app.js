@@ -190,11 +190,13 @@ const index=()=>{
 
 // Add Access Control Allow Origin headers
 app.use((req, res, next) => {
+  console.log("scheisse");
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
+  console.log("scheisse");
   next();
 });
 // app.use(auth);
