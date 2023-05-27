@@ -189,10 +189,13 @@ const whitelist = ["https://easyclickspmsclient.vercel.app"]
 
  
 const corsOptions = {
+ 
 origin:  function (origin, callback) {
   if (!origin || whitelist.indexOf(origin) !== -1) {
+    console.log(origin);
     callback(null, true)
   } else {
+    console.log(origin);
     callback(new Error("Not allowed by CORS"))
   }
 },
