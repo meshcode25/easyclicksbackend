@@ -112,7 +112,8 @@ async function run() {
 
 */
 
-//Cors/// Cross-Origin-Resource-Sharing
+//Cors/
+// Cross-Origin-Resource-Sharing
 // corsOptions={
 //   origin:"Access-Control-Allow-Origin", 
 //   methods:"GET, PUT, POST, DELETE",
@@ -186,16 +187,21 @@ const index=()=>{
 // cors policy and error handling
 const whitelist = ["https://easyclickspmsclient.vercel.app"]
 
+ 
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error("Not allowed by CORS"))
-    }
-  },
-  credentials: true,
+origin:  function (origin, callback) {
+  if (!origin || whitelist.indexOf(origin) !== -1) {
+    callback(null, true)
+  } else {
+    callback(new Error("Not allowed by CORS"))
+  }
+},
+methods:["POST, GET, OPTIONS, DELETE"],
+
+
+credentials: true,
 }
+
 app.use(cors(corsOptions))
 
 
