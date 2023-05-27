@@ -208,7 +208,15 @@ const index=()=>{
 // app.use(cors(corsOptions))
 
 
-
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://easyclickspmsclient.vercel.app");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 // app.use(auth);
 //use url paths as middlewares
 app.use("/o/auth/passwordreset",  passwordresetRouter)
