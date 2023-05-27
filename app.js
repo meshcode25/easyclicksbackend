@@ -110,26 +110,6 @@ async function run() {
  
  client.connect();
 
-*/
-
-//Cors/
-// Cross-Origin-Resource-Sharing
-// corsOptions={
-//   origin:"Access-Control-Allow-Origin", 
-//   methods:"GET, PUT, POST, DELETE",
-//   origin:"*",
-//   credentials:"false",
-//   optionSuccessStatus:200
-// }
-
-
-// corsOptions={
-//   origin:"https://easyclickspmsclient.vercel.app",
-//   methods:"GET, PUT, POST, DELETE",
-//   origin:"*",
-//   credentials:"false",
-//   optionSuccessStatus:200
-// }
 //Middlewares
 //body parser and urlencode
 app.use(express.json())
@@ -210,7 +190,7 @@ const index=()=>{
 
 // Add Access Control Allow Origin headers
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://easyclickspmsclient.vercel.app");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
