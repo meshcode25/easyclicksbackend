@@ -142,26 +142,26 @@ const index=()=>{
   
 }
 */
-// cors policy and error handling
-// const whitelist = ["https://easyclickspmsclient.vercel.app"]
+//cors policy and error handling
 
+const whitelist = ["https://easyclickspmsclient.vercel.app"]
  
-// const corsOptions = {
+const corsOptions = {
  
-// origin:  function (origin, callback) {
-//   if (!origin || whitelist.indexOf(origin) !== -1) {
-//     console.log(origin);
-//     callback(null, true)
-//   } else {
-//     console.log("not allowed by CORS SHEISSE");
-//     callback(new Error("Not allowed by CORS"))
-//   }
-// },
-// methods:["POST, GET, OPTIONS, DELETE"],
+origin:  function (origin, callback) {
+  if (!origin || whitelist.indexOf(origin) !== -1) {
+    console.log(origin);
+    callback(null, true)
+  } else {
+    console.log("not allowed by CORS SHEISSE");
+    callback(new Error("Not allowed by CORS"))
+  }
+},
+methods:["POST, GET, OPTIONS, DELETE"],
 
 
-// credentials: true,
-// }
+ credentials: true,
+ }
 
 // app.use(cors(corsOptions))
 // //Middlewares
@@ -204,7 +204,7 @@ const index=()=>{
 //  next();
 // });
 
-app.use(cors())
+
 
 //body parser and urlencode
 app.use(express.json())
@@ -213,7 +213,7 @@ app.use(express.urlencoded({extended:false}))
 // app.use(auth);
 //use url paths as middlewares
 app.use("/o/auth/passwordreset",  passwordresetRouter)
-app.use("/o/auth/login",   loginRouter)
+app.use("/o/auth/login", cors(corsOptions),   loginRouter)
 app.use("/o/auth/verify", verifyemailRouter)
 app.use("/o/auth/signup",  signupRouter)
 app.use("/", indexRouter)
