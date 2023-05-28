@@ -144,25 +144,31 @@ const index=()=>{
 */
 //cors policy and error handling
 
-const whitelist = ["https://easyclickspmsclient.vercel.app"]
+// const whitelist = ["https://easyclickspmsclient.vercel.app"]
  
-const corsOptions = {
+// const corsOptions = {
  
-origin:  function (origin, callback) {
-  if (!origin || whitelist.indexOf(origin) !== -1) {
-    console.log(`the named origin domain is available ${origin} `);
-    callback(null, true)
-  } else {
-    console.log("not allowed by CORS SHEISSE");
-    callback(new Error("Not allowed by CORS"))
-  }
-},
-methods:["POST, GET, OPTIONS, DELETE"],
+// origin:  function (origin, callback) {
+//   if (!origin || whitelist.indexOf(origin) !== -1) {
+//     console.log(`the named origin domain is available ${origin} `);
+//     callback(null, true)
+//   } else {
+//     console.log("not allowed by CORS SHEISSE");
+//     callback(new Error("Not allowed by CORS"))
+//   }
+// },
+// methods:["POST, GET, OPTIONS, DELETE"],
 
 
- credentials: true,
- }
+//  credentials: true,
+//  }
 
+const corsOptions={
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}
   app.use(cors(corsOptions))
 
 
