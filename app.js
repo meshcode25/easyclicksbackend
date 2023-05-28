@@ -163,7 +163,7 @@ methods:["POST, GET, OPTIONS, DELETE"],
  credentials: true,
  }
 
-  app.use(corsOptions)
+  app.use(cors(corsOptions))
 
 
 //body parser and urlencode
