@@ -200,6 +200,7 @@ app.all(function (req, res, next) {
   "Origin, X-Requested-With, Content-Type, Accept"
 );
  // Pass to next layer of middleware
+ console.log("scheissse diese Dreck soll jetzt auswirken werdern")
  next();
 });
 
