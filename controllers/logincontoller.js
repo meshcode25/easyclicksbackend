@@ -17,6 +17,8 @@ const secret=authconfig.secret
 exports.login_form_post=function(req,res,next){
     
     console.log(req.body.email)
+    console.log(req)
+
     User.findOne({
         email:req.body.email
     }).exec().then(user=>{
