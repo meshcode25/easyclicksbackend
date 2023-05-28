@@ -183,9 +183,6 @@ const index=()=>{
 
 // app.use(cors(corsOptions))
 //Middlewares
-//body parser and urlencode
-// app.use(express.json())
-// app.use(express.urlencoded({extended:false}))
 
 
 // Add Access Control Allow Origin headers
@@ -199,6 +196,11 @@ app.use((req, res, next) => {
   console.log("scheisse");
   next();
 });
+
+//body parser and urlencode
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
 // app.use(auth);
 //use url paths as middlewares
 app.use("/o/auth/passwordreset",  passwordresetRouter)
