@@ -153,7 +153,7 @@ origin:  function (origin, callback) {
     console.log(origin);
     callback(null, true)
   } else {
-    console.log(origin);
+    console.log("not allowed by CORS SHEISSE");
     callback(new Error("Not allowed by CORS"))
   }
 },
