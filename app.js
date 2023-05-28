@@ -150,7 +150,7 @@ const corsOptions = {
  
 origin:  function (origin, callback) {
   if (!origin || whitelist.indexOf(origin) !== -1) {
-    console.log(origin);
+    console.log(`the named origin domain is available ${origin} `);
     callback(null, true)
   } else {
     console.log("not allowed by CORS SHEISSE");
@@ -163,47 +163,7 @@ methods:["POST, GET, OPTIONS, DELETE"],
  credentials: true,
  }
 
-// app.use(cors(corsOptions))
-// //Middlewares
-
-
-// // Add Access Control Allow Origin headers
-// // app.use((req, res, next) => {
-// //   console.log("scheisse");
-// //   res.setHeader("Access-Control-Allow-Origin", "*");
-// //   res.header(
-// //     "Access-Control-Allow-Headers",
-// //     "Origin, X-Requested-With, Content-Type, Accept"
-// //   );
-// //   console.log("scheisse");
-// //   next();
-// // });
-
-// // Add headers before the routes are defined
-// app.all(function (req, res, next) {
   
-//  // Website you wish to allow to connect
-//  res.setHeader('Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app');
-
-//  // Request methods you wish to allow
-//  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-//  // Request headers you wish to allow
-//  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-//  // Set to true if you need the website to include cookies in the requests sent
-//  // to the API (e.g. in case you use sessions)
-//  res.setHeader('Access-Control-Allow-Credentials', true);
- 
-//  res.header(
-//   "Access-Control-Allow-Headers",
-//   "Origin, X-Requested-With, Content-Type, Accept"
-// );
-//  // Pass to next layer of middleware
-//  console.log("scheissse diese Dreck soll jetzt auswirken werdern")
-//  next();
-// });
-
 
 
 //body parser and urlencode
@@ -213,7 +173,7 @@ app.use(express.urlencoded({extended:false}))
 // app.use(auth);
 //use url paths as middlewares
 app.use("/o/auth/passwordreset",  passwordresetRouter)
-app.use("/o/auth/login", cors(corsOptions),   loginRouter)
+app.use("/o/auth/login",    loginRouter)
 app.use("/o/auth/verify", verifyemailRouter)
 app.use("/o/auth/signup",  signupRouter)
 app.use("/", indexRouter)
