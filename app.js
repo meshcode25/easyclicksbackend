@@ -1,6 +1,6 @@
 // require("@babel/register")({
-//   presets: ["@babel/preset-env", "@babel/preset-react"],
-//   "plugins": [
+  //   presets: ["@babel/preset-env", "@babel/preset-react"],
+  //   "plugins": [
 //     [
 //       "transform-assets",
 //       {
@@ -104,21 +104,17 @@ console.log(mongodb_uri);
 
 //let uri =`mongodb+srv://${username}:${password}@${cluster}/?authSource=${authSource}&authMechanism=${authMechanism}`;
 
-  
+
 /*const client = new MongoClient(uri);
 async function run() {
  
  client.connect();
 
-//Middlewares
-//body parser and urlencode
-app.use(express.json())
-app.use(express.urlencoded({extended:false}))
 
 
 
-
-
+ 
+ 
 //const indexhtmlpath= path.join( publicPath,'pmsclient')
 
 //set views and public folder for use
@@ -139,7 +135,7 @@ app.set("view engine", "ejs")
 
 // // Add headers before the routes are defined
 // app.all(function (req, res, next) {
-
+  
 //   // Website you wish to allow to connect
 //   res.setHeader('Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app');
 
@@ -159,7 +155,7 @@ app.set("view engine", "ejs")
 
 /*
 const index=()=>{
- console.log("Please work man am loosing it")
+  console.log("Please work man am loosing it")
   sendFile("hey what the fuck man!!")
   
 }
@@ -187,6 +183,10 @@ const index=()=>{
 
 // app.use(cors(corsOptions))
 
+//Middlewares
+//body parser and urlencode
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
 
 // Add Access Control Allow Origin headers
 app.use((req, res, next) => {
