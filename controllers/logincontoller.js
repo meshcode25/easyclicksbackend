@@ -5,7 +5,7 @@ const jwt= require("jsonwebtoken")
 const authconfig= require("../authConfig")
 const bcrypt = require("bcryptjs")
 const secret=authconfig.secret
-// console.log(secret)
+
 
 // jwt.sign({exp: Math.floor(Date.now()/1000) + 2*60}, secret)
 
@@ -15,7 +15,11 @@ const secret=authconfig.secret
 // }
 
 exports.login_form_post=function(req,res,next){
+
     
+    console.log("here is the secret using the files routes ", secret)
+    console.log(`here is the sescretOrPrivateKey from dotenv ${process.env.SECRET}`) 
+
     console.log(req.body.email)
     console.log(req.body)
     
@@ -49,7 +53,7 @@ exports.login_form_post=function(req,res,next){
                 if(!verified){
                     return res.status(200).send({message: "Unverified Email, Please Check you Email to Verify your Account", color: "red", type:"unverified",  header:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"})
                 
-                }else{    
+                }else{   
                     const token=jwt.sign({exp:Math.floor(Date.now()/1000)+ (60*2), user:user}, process.env.SECRET)   
                     const refreshtoken=jwt.sign({exp:Math.floor(Date.now()/1000)+ (60*5), user:user}, process.env.SECRET)
                     console.log(user)
