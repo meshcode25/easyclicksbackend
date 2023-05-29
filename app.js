@@ -13,7 +13,7 @@ const cookieParser = require("cookie-parser")
 //require("jsonwebtoken")
 
 
-console.log(`here is the secret for jwt in the app file see whether it works here ${ process.env.SECRET }`);
+console.log(`here is the secret for jwt in the app file see whether it works here ${ process.env.JWT_SECRET }`);
 
 // configure server
 const app= express()
