@@ -54,8 +54,8 @@ exports.login_form_post=function(req,res,next){
                     return res.status(200).send({message: "Unverified Email, Please Check you Email to Verify your Account", color: "red", type:"unverified",  header:"Access-Control-Allow-Origin', 'https://easyclickspmsclient.vercel.app/o/auth/login/"})
                 
                 }else{   
-                    const token=jwt.sign({exp:Math.floor(Date.now()/1000)+ (60*2), user:user}, process.env.SECRET)   
-                    const refreshtoken=jwt.sign({exp:Math.floor(Date.now()/1000)+ (60*5), user:user}, process.env.SECRET)
+                    const token=jwt.sign({exp:Math.floor(Date.now()/1000)+ (60*2), user:user}, process.env.JWT_SECRET)   
+                    const refreshtoken=jwt.sign({exp:Math.floor(Date.now()/1000)+ (60*5), user:user}, process.env.JWT_REFRESHTOKEN_SECRET)
                     console.log(user)
 
                     return res.status(201).send({
