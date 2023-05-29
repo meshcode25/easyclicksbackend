@@ -5,7 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "node app.js",
-    "dev":"nodemon app.js "
+    "dev": "nodemon app.js "
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.4",
     "momentjs": "^2.0.0",
+    "mongodb": "^5.5.0",
     "mongoose": "^6.1.7",
     "nodemailer": "^6.7.3",
     "react": "^18.2.0",

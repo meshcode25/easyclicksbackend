@@ -55,6 +55,7 @@ const authMechanism = "<authMechanism>";
 
 const mongodb_uri= `mongodb+srv://${username}:${password}@pmscluster.0rags3f.mongodb.net/test`
 
+//mongodb+srv://yegon:<password>@pmscluster.0rags3f.mongodb.net/?retryWrites=true&w=majority
 
 mongoose.connect(`${mongodb_uri}`);
 
