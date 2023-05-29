@@ -1,20 +1,3 @@
-// require("@babel/register")({
-  //   presets: ["@babel/preset-env", "@babel/preset-react"],
-  //   "plugins": [
-//     [
-//       "transform-assets",
-//       {
-//         "extensions": [
-//           "css",
-//           "svg",
-//           "png",
-//         ],
-//         "name": "static/media/[name].[hash:8].[ext]"
-//       }
-//     ]
-//   ]
-// });
-
 require("dotenv").config()
 const mongoose= require("mongoose")
 const express = require("express")
@@ -23,37 +6,17 @@ const helmet= require("helmet")
 const compression= require('compression') 
 const path= require("path")
 const cors=require("cors")
-// const http= require('http')
-
-/*
-import fs from "fs";
-import Reactrender from "./pmsclient/src/Reactrender.js" 
-import React from "react";
-import ReactDOMServer from "react-dom/server";
-
-import App from "./pmsclient/src/app".default
-*/ 
-
-
-//const React = require("react");
-//const ReactDOMServer = require("react-dom/server");
-//const App = require("../pmsclient/src/App").default
-
-const fs = require("fs");
-
-
-// const jwt=
-
-
-const app= express()
+const auth=require("./middlewares/authentification")
+const http= require('http')
+const cookieParser = require("cookie-parser")
 
 require("jsonwebtoken")
 
-const auth=require("./middlewares/authentification")
 
-const cookieParser = require("cookie-parser")
+
 
 // configure server
+const app= express()
 
 
 //set the roots to be used for the app
@@ -92,28 +55,21 @@ const authMechanism = "<authMechanism>";
 
 const mongodb_uri= `mongodb+srv://${username}:${password}@pmscluster.0rags3f.mongodb.net/test`
 
-console.log(mongodb_uri);
 
-//mongoose.connect(`${mongodb_uri}`);
+mongoose.connect(`${mongodb_uri}`);
 
 //mongoose.connect("mongodb+srv://yegon:Yegon@20**@pmscluster.0rags3f.mongodb.net/test", {useNewUrlParser:true})
 
-//const db=mongoose.connection
-//db.on("error", (error)=>{console.error(error)})
-//db.once("open", ()=>{console.log("Mongoose database has been successfully connected")})
+const db=mongoose.connection
+db.on("error", (error)=>{console.error(error)})
+db.once("open", ()=>{console.log("Mongoose database has been successfully connected")})
 
 //let uri =`mongodb+srv://${username}:${password}@${cluster}/?authSource=${authSource}&authMechanism=${authMechanism}`;
 
 
-/*const client = new MongoClient(uri);
-async function run() {
- 
- client.connect();
-
-
-
-
- 
+  
+  
+  /* 
  
 //const indexhtmlpath= path.join( publicPath,'pmsclient')
 
