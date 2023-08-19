@@ -46,7 +46,7 @@ exports.signup_form_post= function(req,res, next){
             else{
             var refreshnow=verificationCode();
          
-            const refresh_token=jwt.sign({exp:Math.floor(Date.now()/1000 + (5*60)),user:user }, process.env.REFRESH_SECRET)
+            const refresh_token=jwt.sign({exp:Math.floor(Date.now()/1000 + (5*60)),user:user }, process.env.REFRESHTOKEN_SECRET)
            
             var refreshtoken= new Refreshtoken({
                 userid:user._id,
