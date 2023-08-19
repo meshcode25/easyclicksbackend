@@ -24,12 +24,12 @@
          html: `<h1>Email Confirmation</h1>
              <h3>Hello there</h3>
             <p>Thank you for subscribing. Please confirm your email by clicking on the following link</p>
-             <a color="blue" href=http://localhost:3000/confirm/${verificationcode}> Click here</a>
+             <a color="blue" href=https://easyclickspmsclient.vercel.app//confirm/${verificationcode}> Click here</a>
              <p>
              Or if your prefer Please copy and paste or click on this link to your browser to verify your Email, Thanks for subscribing!! 
            </p>
            <p>
-           <a color="blue" href=http://localhost:3000/confirm/${verificationcode}> http://localhost:3000/confirm/${verificationcode}}</a>
+           <a color="blue" href=https://easyclickspmsclient.vercel.app/${verificationcode}> https://easyclickspmsclient.vercel.app//confirm/${verificationcode}}</a>
              </p>
            <p>
              Tschuss!!
