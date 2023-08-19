@@ -11,7 +11,7 @@ const nodemailer= require("../nodemailer")
 
 const jwt=require("jsonwebtoken");
 // const secret= require("../authConfig")
-const secret=process.env.SECRET
+const secret=process.env.JWT_SECRET
 const sendEmail=require("../Oauth2")
 // console.log(`Is this the undefinedd?? ${secret}`);
 
